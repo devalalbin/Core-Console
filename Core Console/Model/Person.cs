@@ -7,10 +7,10 @@ namespace Core_Console
     public class Person
     {
         //fields
-        readonly int personID;
+        private readonly int personID;
         public int PersonID { get { return personID; } }
 
-        string firstName;
+        private string firstName;
         public string FirstName
         { //property of firstname
             get { return firstName; }
@@ -23,12 +23,11 @@ namespace Core_Console
                 else if (value.Equals(""))
                 {
                     throw new ArgumentException("Person needs to have a valid first name.");
-
                 }
                 else { firstName = value; }
             }
         }
-        string lastName;
+        private string lastName;
         public string LastName
         { //property of lastname
             get { return lastName; }

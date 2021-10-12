@@ -25,17 +25,21 @@ namespace Core_Console.Tests
         [Fact]
         public void PersonNameEmptyCheck()
         {
-            ArgumentException resultFirstname = Assert.Throws<ArgumentException>(    //checking that if imput is empty throw exception on first name
-                () => new Person().FirstName = "");
-            Assert.Equal("Person needs to have a valid first name.", resultFirstname.Message);
+            string emptyString = "";
+            ArgumentException result = Assert.Throws<ArgumentException>(    //checking that if input is empty throw exception on first name
+                () => new Person().FirstName = emptyString);
+
+            Assert.Equal("Person needs to have a valid first name.", result.Message);
         }
 
         [Fact]
         public void PersonNameNULLCheck()
         {
-            ArgumentNullException resultLastname = Assert.Throws<ArgumentNullException>(    //checking that if imput is NULL throw exception on lastname
-                () => new Person().LastName = null);
-            Assert.Equal("Value cannot be null.", resultLastname.Message);
+            string nullString = null;
+            ArgumentNullException result = Assert.Throws<ArgumentNullException>(    //checking that if input is NULL throw exception on lastname
+                () => new Person().LastName = nullString);
+
+            Assert.Equal("Value cannot be null.", result.Message);
         }
     }
 }
