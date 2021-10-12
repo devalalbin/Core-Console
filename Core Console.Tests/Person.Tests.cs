@@ -11,12 +11,15 @@ namespace Core_Console.Tests
         [Fact]
         public void Constructor() // testing if our startingvalues of Person are correct
         {
+            // Arrange
             string firstName = "Firstname";
             string lastName = "Lastname";
             int personID = 0;
 
+            //act
             Person testStudent = new Person();
 
+            //assert
             Assert.NotNull(testStudent);
             Assert.Equal(testStudent.FirstName, firstName);
             Assert.Equal(testStudent.LastName, lastName);

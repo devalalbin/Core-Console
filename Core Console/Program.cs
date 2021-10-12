@@ -15,6 +15,11 @@ namespace Core_Console
             Console.WriteLine(pers.FirstName);
             Console.WriteLine(pers.LastName);
             Console.WriteLine(pers.PersonID);
+
+            PersonSequencer seq = new PersonSequencer();
+            PersonSequencer seq2 = new PersonSequencer();
+            PersonSequencer.Reset();
+            
         }
     }
 }

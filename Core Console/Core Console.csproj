@@ -6,8 +6,4 @@
     <RootNamespace>Core_Console</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-
 </Project>

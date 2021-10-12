@@ -13,7 +13,7 @@ namespace Core_Console.Tests
             int id = 1;
             string descript = "fix the class";
 
-            Todo testTodo = new Todo(id,descript);
+            Todo testTodo = new Todo(id,descript); //checking if the inputs are correct
 
             Assert.NotNull(testTodo);
             Assert.Equal(testTodo.Description, descript); 
