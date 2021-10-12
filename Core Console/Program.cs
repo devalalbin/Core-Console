@@ -1,12 +1,20 @@
 ﻿using System;
+using Core_Console;
 
 namespace Core_Console
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Person pers = new Person();
+            pers.FirstName = "Albin";
+            pers.LastName = "de Val";
+            //pers.FirstName = "";
+            //pers.LastName = null;
+            Console.WriteLine(pers.FirstName);
+            Console.WriteLine(pers.LastName);
+            Console.WriteLine(pers.PersonID);
         }
     }
 }
