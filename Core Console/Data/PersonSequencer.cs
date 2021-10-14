@@ -12,12 +12,12 @@ namespace Core_Console
         {
             personId = 0;
         }
-        public static int NextPersonID() //add togehter two values
+        public static int NextPersonID() //Increments todo and returns next id
         {
             personId++;
             return personId;
         }
-         public static void Reset() //add togehter two values
+         public static void Reset() //reset person to 0
         {
             personId = 0;
         }
