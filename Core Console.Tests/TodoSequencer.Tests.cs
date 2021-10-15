@@ -19,7 +19,7 @@ namespace Core_Console.Tests
             int expectedThree = 3;
 
             //act
-            PersonSequencer personOne = new PersonSequencer(); //todo id 0
+            TodoSequencer personOne = new TodoSequencer(); //todo id 0
 
             //asserts //using nextpersonID 1->2->3 then resetting to id 0
             Assert.Equal(TodoSequencer.NextTodoID(), expectedOne);

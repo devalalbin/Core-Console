@@ -20,7 +20,7 @@ namespace Core_Console.Tests
             int expectedThree = 3;
  
             //act
-            PersonSequencer personOne = new PersonSequencer(); //person id 0
+            PersonSequencer personSeqOne = new PersonSequencer(); //person id 0
 
             //asserts //using nextpersonID 1->2->3 then resetting to id 0
             Assert.Equal(PersonSequencer.NextPersonID(), expectedOne);   
