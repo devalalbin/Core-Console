@@ -12,7 +12,7 @@ namespace Core_Console
         {
             personId = 0;
         }
-        public static int NextPersonID() //Increments todo and returns next id
+        public static int NextPersonID() //Increments personsequencer and returns next id
         {
             personId++;
             return personId;

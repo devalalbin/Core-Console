@@ -51,5 +51,11 @@ namespace Core_Console
             lastName = "Lastname";
             personID = 0;
         }
+        public Person(string firstName, string lastName, int personID) //Constructor with parameters
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            personID++;
+        }
     }
 }

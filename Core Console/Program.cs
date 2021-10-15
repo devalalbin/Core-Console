@@ -16,10 +16,16 @@ namespace Core_Console
             Console.WriteLine(pers.LastName);
             Console.WriteLine(pers.PersonID);
 
-            PersonSequencer seq = new PersonSequencer();
-            PersonSequencer seq2 = new PersonSequencer();
+            PersonSequencer perSeq = new PersonSequencer();
+            PersonSequencer perSeq2 = new PersonSequencer();
             PersonSequencer.Reset();
+            TodoSequencer todoSeq = new TodoSequencer();
+
+            People peeps = new People();
+            peeps.AddPersonToArray("hej","då");
+            peeps.AddPersonToArray("ny", "pers");
             
+            Console.WriteLine(peeps.Size()+ peeps.FindById(1).FirstName);
         }
     }
 }
