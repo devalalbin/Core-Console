@@ -19,6 +19,7 @@ namespace Core_Console
         {
             this.todoID = todoID;
             this.description = description;
+            todoID++;
         }
     }
 }
