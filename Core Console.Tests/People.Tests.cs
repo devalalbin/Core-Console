@@ -18,7 +18,6 @@ namespace Core_Console.Tests
             string excpectedName2 = "Ibrahimovic";
             string excpectedName3 = "Cristiano";
             string excpectedName4 = "Ronaldo";
-            
 
             //act
             People peopleArray = new People();
