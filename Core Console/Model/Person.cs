@@ -45,17 +45,16 @@ namespace Core_Console
             }
         }
 
+        
         public Person() //Constructor
         {
-            firstName = "Firstname";
-            lastName = "Lastname";
-            personID = 0;
-        }
-        public Person(string firstName, string lastName, int personID) //Constructor with parameters
+
+        } 
+        public Person(string firstName, string lastName) //Constructor with parameters
         {
             this.firstName = firstName;
             this.lastName = lastName;
-            personID++;
+            personID = PersonSequencer.NextPersonID();
         }
     }
 }

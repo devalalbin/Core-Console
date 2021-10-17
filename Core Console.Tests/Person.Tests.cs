@@ -14,7 +14,7 @@ namespace Core_Console.Tests
             // Arrange
             string firstName = "Firstname";
             string lastName = "Lastname";
-            int personID = 0;
+            int personID = 1;
 
             //act
             Person testStudent = new Person();
