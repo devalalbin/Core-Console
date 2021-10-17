@@ -18,6 +18,7 @@ namespace Core_Console.Tests
             string excpectedLastName1 = "Ibrahimovic";
             string expectedFirstName2 = "Cristiano";
             string excpectedLastName2 = "Ronaldo";
+            string expectedNameAfterRemoval = "Leo";
 
             //act
             People peopleArray = new People();
@@ -29,12 +30,15 @@ namespace Core_Console.Tests
             //assert 
             Assert.Equal(peopleArray.FindById(1).FirstName, expectedFirstName1);  //checking if person 1 is saved to correct array slot
             Assert.Equal(peopleArray.FindById(1).LastName, excpectedLastName1);
-
             Assert.Equal(peopleArray.FindById(3).FirstName, expectedFirstName2);  //checking if person 3 is saved to correct array slot
             Assert.Equal(peopleArray.FindById(3).LastName, excpectedLastName2);
             Assert.Equal(peopleArray.Size(), excpectedArraySize); // checking if size of array is correct
             //FindAll test
             Assert.Equal(peopleArray.FindAll()[2].FirstName, expectedFirstName2);  //person in arrayslot [2] should be cristiano when returning all
+            //RemoveObjectFromArray tests
+            peopleArray.RemoveObjectFromArray(0); //removing "Zlatan" from array size should go from 3 to 2
+            Assert.Equal(peopleArray.Size(), excpectedArraySize - 1);
+            Assert.Equal(peopleArray.FindAll()[0].FirstName, expectedNameAfterRemoval); //checking that Leo moves from spot [1] to [0]
         }
 
 

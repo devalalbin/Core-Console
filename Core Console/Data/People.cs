@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Core_Console
 {
     public class People
     {
         private static Person[] personArray = new Person[0]; //array of persons
-        int iD = 0; //setting person starting spot to 1
-
+        int iD = 0; 
 
         public int Size() // returns lenght of person array
         {
             return personArray.Length;
         }
-        public Person[] FindAll() // returns the person array
+        public Person[] FindAll() // returns the Person array
         {
             return personArray;
         }
@@ -26,10 +26,8 @@ namespace Core_Console
                 {
                     return personArray[i];
                 }
-                
             }
             return null;
-
         }
         public void AddPersonToArray(string firstName, string lastName) //creates a new person and adds it to the person array
         {
@@ -39,10 +37,24 @@ namespace Core_Console
             personArray[iD] = newPerson;
             iD++;
         }
-        public void Clear()
+        public void Clear() //Clears the array
         {
             Array.Clear(personArray, 0, personArray.Length);
             Array.Resize(ref personArray, 0);
+          // Console.WriteLine("Array after deletion");
+            foreach (Person value in personArray)
+            {
+                Console.WriteLine(value.FirstName + " " + value.LastName); //should not write anything
+            }
+        }
+        public void RemoveObjectFromArray(int indexToRemove)  
+        {
+            personArray = personArray.Where((source, index) => index != indexToRemove).ToArray(); //removes given person from the array (using the system linq libary and "Where")
+            Console.WriteLine("Array after deletion: ");
+            foreach(Person value in personArray)
+            {
+                Console.WriteLine(value.FirstName +" "+value.LastName);
+            }
         }
     }
 }

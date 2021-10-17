@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Core_Console
 {
@@ -32,7 +33,6 @@ namespace Core_Console
         }
         public void AddTodoToArray(int todoID, string description) //creates a new todo and adds it to the todo array 
         {
-            //int iD = TodoSequencer.NextTodoID(); // get next todo id
             Array.Resize(ref todoArray, iD + 1); //expanding the array (id+1 cause of the array start on 0 so the Size matches)
             Todo newTodo = new Todo(todoID, description); //adding a todo to the iD spot
             todoArray[iD] = newTodo;
@@ -47,7 +47,7 @@ namespace Core_Console
                 {
                     Array.Resize(ref methodArray, Count+1); //expanding the array 
                     methodArray[Count] = todoArray[i];
-                    Count++;  // adding matching status into new array starting at slot 1
+                    Count++;  
                 } 
             }
             return methodArray;
@@ -61,7 +61,7 @@ namespace Core_Console
                 {
                     Array.Resize(ref methodArray, Count + 1); //expanding the array 
                     methodArray[Count] = todoArray[i];
-                    Count++;  // adding matching status into new array starting at slot 1
+                    Count++;  
                 }
             }
             return methodArray;
@@ -75,7 +75,7 @@ namespace Core_Console
                 {
                     Array.Resize(ref methodArray, Count + 1); //expanding the array 
                     methodArray[Count] = todoArray[i];
-                    Count++;  // adding matching status into new array starting at slot 1
+                    Count++;  
                 }
             }
             return methodArray;
@@ -89,7 +89,7 @@ namespace Core_Console
                 {
                     Array.Resize(ref methodArray, Count + 1); //expanding the array 
                     methodArray[Count] = todoArray[i];
-                    Count++;  // adding matching status into new array starting at slot 1
+                    Count++;  
                 }
             }
             return methodArray;
@@ -98,6 +98,15 @@ namespace Core_Console
         {
             Array.Clear(todoArray, 0, todoArray.Length);
             Array.Resize(ref todoArray, 0);
+        }
+        public void RemoveObjectFromArray(int indexToRemove)
+        {
+            todoArray = todoArray.Where((source, index) => index != indexToRemove).ToArray(); //removes given todo from the array (using the system linq libary and "Where")
+            Console.WriteLine("Array after deletion");
+            foreach (Todo value in todoArray)
+            {
+                Console.WriteLine(value.Description);
+            }
         }
     }
 }

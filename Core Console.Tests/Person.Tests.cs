@@ -9,21 +9,20 @@ namespace Core_Console.Tests
     public class PersonTests
     {
         [Fact]
-        public void Constructor() // testing if our startingvalues of Person are correct
+        public void PersonTest() // testing if our startingvalues of Person are correct
         {
             // Arrange
-            string firstName = "Firstname";
-            string lastName = "Lastname";
-            int personID = 1;
+            string expectedFirstName = "Albin";
+            string expectedLastName = "de Val";
 
             //act
-            Person testStudent = new Person();
+            Person testStudent = new Person("Albin", "de Val");
 
             //assert
             Assert.NotNull(testStudent);
-            Assert.Equal(testStudent.FirstName, firstName);
-            Assert.Equal(testStudent.LastName, lastName);
-            Assert.Equal(testStudent.PersonID, personID);
+            Assert.Equal(testStudent.FirstName, expectedFirstName);
+            Assert.Equal(testStudent.LastName, expectedLastName);
+
         }
         [Fact]
         public void PersonNameEmptyCheck()

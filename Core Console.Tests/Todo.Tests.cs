@@ -11,7 +11,7 @@ namespace Core_Console.Tests
         public void TodoConstructorTest() // Testing our Constructor of Todo class if it accepts our values
         {
             int id = 1;
-            string descript = "fix the class";
+            string descript = "Todo Test";
 
             Todo testTodo = new Todo(id,descript); //checking if the inputs are correct
 
