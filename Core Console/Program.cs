@@ -19,7 +19,16 @@ namespace Core_Console
             Console.WriteLine("People Size before removal: "+peeps.Size());
             peeps.RemoveObjectFromArray(1); //removes Martin from array
             Console.WriteLine("People Size after removal: " + peeps.Size());
-            peeps.Clear();
+            
+            peeps.Clear(); //testing if clear works as it should
+            peeps.AddPersonToArray("Albin", "de Val");
+            peeps.AddPersonToArray("Martin", "Martinsson");
+            peeps.AddPersonToArray("Sven", "Svensson");
+            peeps.AddPersonToArray("Jakob", "Jakobsson");
+
+            Console.WriteLine("People Size before removal: " + peeps.Size());
+            peeps.RemoveObjectFromArray(1); //removes Martin from array
+            Console.WriteLine("People Size after removal: " + peeps.Size());
 
             //testing remove object from TodoItems
             TodoItems todoArray = new TodoItems();

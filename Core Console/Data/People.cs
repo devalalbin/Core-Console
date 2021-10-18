@@ -41,7 +41,8 @@ namespace Core_Console
         {
             Array.Clear(personArray, 0, personArray.Length);
             Array.Resize(ref personArray, 0);
-          // Console.WriteLine("Array after deletion");
+            // Console.WriteLine("Array after deletion");
+            iD = 0;
             foreach (Person value in personArray)
             {
                 Console.WriteLine(value.FirstName + " " + value.LastName); //should not write anything

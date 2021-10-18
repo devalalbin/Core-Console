@@ -98,6 +98,7 @@ namespace Core_Console
         {
             Array.Clear(todoArray, 0, todoArray.Length);
             Array.Resize(ref todoArray, 0);
+            iD = 0;
         }
         public void RemoveObjectFromArray(int indexToRemove)
         {
